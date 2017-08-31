@@ -17,11 +17,22 @@ var util = {
             return new Date(date);
         } else if (date instanceof Date) {
             return date;
-        } else {
-            return null;
+        } else if ($.is.isObject(date)) {
+            var base = util.dateInfo(util.now());
+            var _a = [
+                date.year ? date.year : base.year,
+                date.month ? date.month : base.month,
+                date.day ? date.day : base.day
+            ];
+            var _b = [
+                date.hour ? date.hour : "00",
+                date.minute ? date.minute : "00",
+                date.second ? date.second : "00"
+            ];
+            return new Date(_a.join("/") + " " + _b.join(":"));
         }
     },
-    now:function () {
+    now: function () {
         return new Date();
     },
     dateInfo: function (date) {
@@ -39,9 +50,14 @@ var util = {
             return null;
         }
     },
-    getMonthDays: function (year, month) {
+    getDayNumberOfMonth: function (year, month) {
         var m = [31, ((year % 4 === 0) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         return m[month];
+    },
+    getDaysOfMonth:function (year,month) {
+        var date=util.date({year:year,month:month,day:1});
+        var begin=date.getDay();
+
     }
 };
 module.exports = util;
