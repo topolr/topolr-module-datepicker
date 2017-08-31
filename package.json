@@ -1,0 +1,26 @@
+{
+  "name": "topolr-module-datepicker",
+  "version": "1.0.0",
+  "description": "datepicker for topolr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topolr/topolr-module-datepicker.git"
+  },
+  "author": "WangJinliang (hou80houzhu)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/topolr/topolr-module-datepicker/issues"
+  },
+  "topolr": {
+    "basePath": "./com/topolr/"
+  },
+  "homepage": "https://github.com/topolr/topolr-module-datepicker#readme",
+  "dependencies": {
+    "topolr": "^1.8.0",
+    "topolr-module-form": "^1.0.10"
+  }
+}
